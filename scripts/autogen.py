@@ -170,11 +170,10 @@ def gen_wamr_stubs(spath, syscall_info, archs):
 
                 f"\tSC({nr} ,{fn_name});",
                 f"\tERRSC({fn_name});",
-                "\tRETURN(__syscall{num_args}(SYS_{fn_name}{arglist}));".format(
+                "\tRETURN(__syscall{num_args}(SYS_{fn_name}{arglist}), \"{fn_name}\", {num_args} {arglist});".format(
                     num_args = len(args),
                     fn_name = fn_name,
-                    arglist = ''.join([f", a{i+1}" if argty[-1] != '*' else f", MADDR(a{i+1})"
-                        for i, argty in enumerate(args)])),
+                    arglist = ''.join([f", a{i+1}" for i, j in enumerate(args)])),
                 
                 "}\n"
                 ] if nargs else [""]

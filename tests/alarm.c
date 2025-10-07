@@ -3,6 +3,7 @@
 #define ALARM_TIME 3
 
 int main() {
+  printf("Forking");
   pid_t cpid = fork();
   int ct = 0;
   /* Child */

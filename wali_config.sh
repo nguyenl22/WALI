@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export WALI_ROOT_DIR=$(dirname $(realpath ${BASH_SOURCE}))
+#export WALI_ROOT_DIR=/home/ltn/WALI
 export WALI_LLVM_DIR=$WALI_ROOT_DIR/llvm-project
 
 # Sysroot

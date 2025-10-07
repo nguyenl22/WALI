@@ -2,7 +2,7 @@
 
 int (*p[4]) (int x, int y);
 int (*vd)(int x, int y);
-
+__attribute__((export_name("export:sum")));
 int sum(int a, int b) { return a + b; }
 int subtract(int a, int b) { return a - b; }
 int mul(int a, int b) { return a * b; }
